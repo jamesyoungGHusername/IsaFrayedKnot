@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
     public Facing facing;
     public bool facingLeft;
     private Animator playerAnimator;
-    public GameObject weapon;
+    public GameObject fireball;
     void Start()
     {
         facing = Facing.South;
@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour
     {
         xInput = Input.GetAxis("Horizontal");
         yInput = Input.GetAxis("Vertical");
-        Debug.Log(xInput);
+      
         if (xInput==0 && yInput == 0)
         {
             playerAnimator.SetBool("Moving", false);
@@ -41,8 +41,9 @@ public class PlayerController : MonoBehaviour
             }
         }
         transform.Translate(new Vector3(xInput, yInput, 0) * Time.deltaTime * speed);
-       
-        if (Input.GetKeyDown(KeyCode.W))
+        //This method of changing which sprite is displayed is quick and dirty, could likely be better.
+        //When overhauled, the character should face the direction they're shooting while they're shooting.
+        /*if (Input.GetKeyDown(KeyCode.W))
         {
             facing = Facing.North;
             playerAnimator.Play("WizardIdleUp");
@@ -73,6 +74,8 @@ public class PlayerController : MonoBehaviour
         {
             
         }
+        */
+        
     }
     private void OnCollisionEnter(Collision collision)
     {

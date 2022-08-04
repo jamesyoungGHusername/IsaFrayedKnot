@@ -8,6 +8,8 @@ public class PlayerController : MonoBehaviour
     float xInput;
     float yInput;
     public float speed = 5.0f;
+    public Rigidbody2D rb;
+    Vector2 movement;
     public Facing facing;
     public bool facingLeft;
     private Animator playerAnimator;
@@ -23,8 +25,10 @@ public class PlayerController : MonoBehaviour
     {
         xInput = Input.GetAxis("Horizontal");
         yInput = Input.GetAxis("Vertical");
+        movement.x = xInput;
+        movement.y = yInput;
       
-        if (xInput==0 && yInput == 0)
+        if (xInput==0 || yInput == 0)
         {
             playerAnimator.SetBool("Moving", false);
         }
@@ -40,7 +44,7 @@ public class PlayerController : MonoBehaviour
                 playerAnimator.SetFloat("WalkSpeed", Mathf.Abs(yInput));
             }
         }
-        transform.Translate(new Vector3(xInput, yInput, 0) * Time.deltaTime * speed);
+        
         //This method of changing which sprite is displayed is quick and dirty, could likely be better.
         //When overhauled, the character should face the direction they're shooting while they're shooting.
         /*if (Input.GetKeyDown(KeyCode.W))
@@ -76,6 +80,10 @@ public class PlayerController : MonoBehaviour
         }
         */
         
+    }
+    private void FixedUpdate()
+    {
+        rb.MovePosition(rb.position + movement * speed * Time.fixedDeltaTime);
     }
     private void OnCollisionEnter(Collision collision)
     {

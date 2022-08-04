@@ -3130,6 +3130,11 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!50 &607207507 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 4215858700928354294, guid: fda6db613b0444f76bfd1526289ac68e, type: 3}
+  m_PrefabInstance: {fileID: 4215858699972370453}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &607207512 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4215858700928354293, guid: fda6db613b0444f76bfd1526289ac68e, type: 3}
@@ -3320,6 +3325,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 4215858700928354251, guid: fda6db613b0444f76bfd1526289ac68e, type: 3}
+      propertyPath: rb
+      value: 
+      objectReference: {fileID: 607207507}
     - target: {fileID: 4215858700928354251, guid: fda6db613b0444f76bfd1526289ac68e, type: 3}
       propertyPath: weapon
       value: 

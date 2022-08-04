@@ -11,6 +11,11 @@ Top-down roguelike dungeon crawler made to get used to working together online.
   shot damage/size.
   Shot vector should add the player's movement vector. (If the player is 
 moving to the side the shot should move forward AND to the side).
+ Adjust character movement and attack controls.
+  WASD to move and arow keys to attack.
+   Character factes attacking direction while an arrow key is pressed, 
+after a they key is released the character faces back in the direction of 
+movement.
   
 # level
   create single room design with up to four doors.

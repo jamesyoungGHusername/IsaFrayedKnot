@@ -9,6 +9,8 @@ Top-down roguelike dungeon crawler made to get used to working together online.
   shot range (how far a shot goes before degrading.
   shot speed (how fast shots travel.
   shot damage/size.
+  Shot vector should add the player's movement vector. (If the player is 
+moving to the side the shot should move forward AND to the side).
   
 # level
   create single room design with up to four doors.

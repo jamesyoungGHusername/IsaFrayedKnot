@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!20 &185600505 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 4215858700153411690, guid: fda6db613b0444f76bfd1526289ac68e, type: 3}
+  m_PrefabInstance: {fileID: 4215858699972370453}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &220858181
 GameObject:
   m_ObjectHideFlags: 0
@@ -3140,6 +3145,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4215858700928354293, guid: fda6db613b0444f76bfd1526289ac68e, type: 3}
   m_PrefabInstance: {fileID: 4215858699972370453}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &743415094 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4215858700928354248, guid: fda6db613b0444f76bfd1526289ac68e, type: 3}
+  m_PrefabInstance: {fileID: 4215858699972370453}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1494283051
 GameObject:
   m_ObjectHideFlags: 0
@@ -3249,8 +3259,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1867361275}
+  - component: {fileID: 1867361276}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: FirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3270,6 +3281,21 @@ Transform:
   m_Father: {fileID: 607207512}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1867361276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1867361274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7176bd31138847e39e689f241ef11bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fireball: {fileID: 6031736873654466645, guid: 402f436af649748dcb1a0eb8c0079d37, type: 3}
+  cam: {fileID: 185600505}
+  player: {fileID: 743415094}
 --- !u!1 &1888520129
 GameObject:
   m_ObjectHideFlags: 0
@@ -3329,6 +3355,10 @@ PrefabInstance:
       propertyPath: rb
       value: 
       objectReference: {fileID: 607207507}
+    - target: {fileID: 4215858700928354251, guid: fda6db613b0444f76bfd1526289ac68e, type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 185600505}
     - target: {fileID: 4215858700928354251, guid: fda6db613b0444f76bfd1526289ac68e, type: 3}
       propertyPath: weapon
       value: 

@@ -10,10 +10,12 @@ public class PlayerController : MonoBehaviour
     public float speed = 5.0f;
     public Rigidbody2D rb;
     Vector2 movement;
+    [HideInInspector] public bool shooting = false;
     public Facing facing;
     public bool facingLeft;
     private Animator playerAnimator;
     public GameObject fireball;
+    
     void Start()
     {
         facing = Facing.South;
@@ -25,9 +27,10 @@ public class PlayerController : MonoBehaviour
     {
         xInput = Input.GetAxis("Horizontal");
         yInput = Input.GetAxis("Vertical");
+        
         movement.x = xInput;
         movement.y = yInput;
-      
+        
         if (xInput==0 || yInput == 0)
         {
             playerAnimator.SetBool("Moving", false);
@@ -44,46 +47,51 @@ public class PlayerController : MonoBehaviour
                 playerAnimator.SetFloat("WalkSpeed", Mathf.Abs(yInput));
             }
         }
-        
+
         //This method of changing which sprite is displayed is quick and dirty, could likely be better.
         //When overhauled, the character should face the direction they're shooting while they're shooting.
-        /*if (Input.GetKeyDown(KeyCode.W))
+        if (!shooting)
         {
-            facing = Facing.North;
-            playerAnimator.Play("WizardIdleUp");
-            transform.localScale = new Vector3(2, 2, 1);
+            if (Input.GetKeyDown(KeyCode.W))
+            {
+                facing = Facing.North;
+                playerAnimator.Play("WizardIdleUp");
+                transform.localScale = new Vector3(2, 2, 1);
+            }
+            else if (Input.GetKeyDown(KeyCode.S))
+            {
+                facing = Facing.South;
+                playerAnimator.Play("WizardIdleDown");
+                transform.localScale = new Vector3(2, 2, 1);
+            }
+            else if (Input.GetKeyDown(KeyCode.A))
+            {
+                facing = Facing.West;
+                facingLeft = true;
+                playerAnimator.Play("WizardIdleSide");
+                transform.localScale = new Vector3(-2, 2, 1);
+
+            }
+            else if (Input.GetKeyDown(KeyCode.D))
+            {
+                facing = Facing.East;
+                facingLeft = false;
+                playerAnimator.Play("WizardIdleSide");
+                transform.localScale = new Vector3(2, 2, 1);
+            }
+            else
+            {
+
+            }
         }
-        else if (Input.GetKeyDown(KeyCode.S))
-        {
-            facing = Facing.South;
-            playerAnimator.Play("WizardIdleDown");
-            transform.localScale = new Vector3(2, 2, 1);
-        }
-        else if (Input.GetKeyDown(KeyCode.A))
-        {
-            facing = Facing.West;
-            facingLeft = true;
-            playerAnimator.Play("WizardIdleSide");
-            transform.localScale = new Vector3(-2,2,1);
-            
-        }
-        else if (Input.GetKeyDown(KeyCode.D))
-        {
-            facing = Facing.East;
-            facingLeft = false;
-            playerAnimator.Play("WizardIdleSide");
-            transform.localScale = new Vector3(2, 2, 1);
-        }
-        else
-        {
-            
-        }
-        */
+        
         
     }
     private void FixedUpdate()
     {
         rb.MovePosition(rb.position + movement * speed * Time.fixedDeltaTime);
+        
+
     }
     private void OnCollisionEnter(Collision collision)
     {

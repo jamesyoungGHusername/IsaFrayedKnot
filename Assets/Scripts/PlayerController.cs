@@ -50,40 +50,39 @@ public class PlayerController : MonoBehaviour
 
         //This method of changing which sprite is displayed is quick and dirty, could likely be better.
         //When overhauled, the character should face the direction they're shooting while they're shooting.
-        if (!shooting)
+        
+        if (Input.GetKeyDown(KeyCode.W))
         {
-            if (Input.GetKeyDown(KeyCode.W))
-            {
-                facing = Facing.North;
-                playerAnimator.Play("WizardIdleUp");
-                transform.localScale = new Vector3(2, 2, 1);
-            }
-            else if (Input.GetKeyDown(KeyCode.S))
-            {
-                facing = Facing.South;
-                playerAnimator.Play("WizardIdleDown");
-                transform.localScale = new Vector3(2, 2, 1);
-            }
-            else if (Input.GetKeyDown(KeyCode.A))
-            {
-                facing = Facing.West;
-                facingLeft = true;
-                playerAnimator.Play("WizardIdleSide");
-                transform.localScale = new Vector3(-2, 2, 1);
-
-            }
-            else if (Input.GetKeyDown(KeyCode.D))
-            {
-                facing = Facing.East;
-                facingLeft = false;
-                playerAnimator.Play("WizardIdleSide");
-                transform.localScale = new Vector3(2, 2, 1);
-            }
-            else
-            {
-
-            }
+            facing = Facing.North;
+            playerAnimator.Play("WizardIdleUp");
+            transform.localScale = new Vector3(2, 2, 1);
         }
+        else if (Input.GetKeyDown(KeyCode.S))
+        {
+            facing = Facing.South;
+            playerAnimator.Play("WizardIdleDown");
+            transform.localScale = new Vector3(2, 2, 1);
+        }
+        else if (Input.GetKeyDown(KeyCode.A))
+        {
+            facing = Facing.West;
+            facingLeft = true;
+            playerAnimator.Play("WizardIdleSide");
+            transform.localScale = new Vector3(-2, 2, 1);
+
+        }
+        else if (Input.GetKeyDown(KeyCode.D))
+        {
+            facing = Facing.East;
+            facingLeft = false;
+            playerAnimator.Play("WizardIdleSide");
+            transform.localScale = new Vector3(2, 2, 1);
+        }
+        else
+        {
+
+        }
+        
         
         
     }

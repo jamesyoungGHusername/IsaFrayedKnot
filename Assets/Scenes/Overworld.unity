@@ -3150,6 +3150,21 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4215858700928354248, guid: fda6db613b0444f76bfd1526289ac68e, type: 3}
   m_PrefabInstance: {fileID: 4215858699972370453}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &743415095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 743415094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd273fa10520d4b899288f40332a4ce3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firePoint: {fileID: 1867361275}
+  shotPrefab: {fileID: 6031736873654466645, guid: 402f436af649748dcb1a0eb8c0079d37, type: 3}
+  shotForce: 20
 --- !u!1 &1494283051
 GameObject:
   m_ObjectHideFlags: 0
@@ -3293,9 +3308,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7176bd31138847e39e689f241ef11bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireball: {fileID: 6031736873654466645, guid: 402f436af649748dcb1a0eb8c0079d37, type: 3}
-  cam: {fileID: 185600505}
-  player: {fileID: 743415094}
 --- !u!1 &1888520129
 GameObject:
   m_ObjectHideFlags: 0
@@ -3377,7 +3389,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4215858700928354293, guid: fda6db613b0444f76bfd1526289ac68e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.12
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4215858700928354293, guid: fda6db613b0444f76bfd1526289ac68e, type: 3}
       propertyPath: m_LocalPosition.z

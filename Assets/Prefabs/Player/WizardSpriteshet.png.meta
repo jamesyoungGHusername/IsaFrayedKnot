@@ -42,6 +42,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -280,6 +281,13 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      WizardSpriteshet_4: 4125725085464361552
+      WizardSpriteshet_2: -2577887066335616183
+      WizardSpriteshet_3: -9123779470383246614
+      WizardSpriteshet_0: -8687226768073670034
+      WizardSpriteshet_1: 2829002825057982694
+      WizardSpriteshet_5: 6542087677450306698
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

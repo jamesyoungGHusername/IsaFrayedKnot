@@ -43,3 +43,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: wall
+    uniqueID: 406714989
+    locked: 0
+  - name: hazard
+    uniqueID: 2666040351
+    locked: 0
+  - name: player
+    uniqueID: 4172401219
+    locked: 0

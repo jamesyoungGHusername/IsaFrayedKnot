@@ -8,6 +8,7 @@ public class EnemyStats : MonoBehaviour
     public int maxHP = 10;
     public int currentHP = 10;
     public bool alive = true;
+    public AudioSource damageClip;
     void Start()
     {
         
@@ -31,6 +32,7 @@ public class EnemyStats : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("PlayerWeapon")){
             takeDamage(collision.gameObject.GetComponent<BulletTravel>().damage);
+            damageClip.Play();
             IEnumerator coroutine = FlashRed();
             StartCoroutine(coroutine);
         }

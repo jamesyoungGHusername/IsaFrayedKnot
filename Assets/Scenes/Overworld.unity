@@ -8533,6 +8533,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Troll
       objectReference: {fileID: 0}
+    - target: {fileID: 6008811697756364204, guid: 87c4a3f5bef514818accc4a8a5568140, type: 3}
+      propertyPath: m_Mass
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 6008811697756364207, guid: 87c4a3f5bef514818accc4a8a5568140, type: 3}
       propertyPath: m_RootOrder
       value: 3

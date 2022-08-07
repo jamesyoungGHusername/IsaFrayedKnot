@@ -21,8 +21,25 @@ public class EnemyStats : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
     public void takeDamage(int i)
     {
         currentHP -= i;
+        Debug.Log("Troll takes "+i+" damage and has "+currentHP+" remaining");
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("PlayerWeapon")){
+            takeDamage(collision.gameObject.GetComponent<BulletTravel>().damage);
+            IEnumerator coroutine = FlashRed();
+            StartCoroutine(coroutine);
+        }
+    }
+
+    private IEnumerator FlashRed()
+    {
+        GetComponent<SpriteRenderer>().color = Color.red;
+        yield return new WaitForSeconds(0.1f);
+        GetComponent<SpriteRenderer>().color = Color.white;
     }
 }

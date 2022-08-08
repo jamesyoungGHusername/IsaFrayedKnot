@@ -11,10 +11,23 @@ Top-down roguelike dungeon crawler made to get used to working together online.
 	* shot damage/size.
 	* Shot vector should add the player's movement vector. (If the player is moving to the side the shot should move forward AND to the side).
 * Adjust character movement and attack controls.
-	* WASD to move and arow keys to attack.
+	* WASD to move and arrow keys to attack.
  	* Character factes attacking direction while an arrow key is pressed, after a they key is released the character faces back in the direction of 
 movement.
-  
+* Possible solution to directional shooting, yet to be implemented.
+	* Instantiate(shot, transform.position, Quaternion.identiy);
+	* Shot script that's responsible for moving the shot instead of 
+applying a force to the rigid body.
+	* xSpeed AND ySpeed.
+	* Vector2 position=transform.position;
+	* position.x += speed;
+	* transform.position=position;
+	* Coroutine to destroy bullet or something.
+	* MODIFY BULLET SPEED AT INSTANTIATION, negative for going left.
+	* two speed variables, set to 0 vs 1 or whatever depending on the 
+directon of the shot.
+
+
 # level
  * create single room design with up to four doors.
  * create trap/spike tile that damages the player when they stand on it.

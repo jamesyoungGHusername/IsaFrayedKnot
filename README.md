@@ -26,3 +26,6 @@ movement.
  	* damages player when they touch it
  	* takes damage when player shots touch it
  	* follows player when they're in line of sight (finite state AI)
+
+# Contributors
+* Athena, James

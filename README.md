@@ -14,19 +14,6 @@ Top-down roguelike dungeon crawler made to get used to working together online.
 	* WASD to move and arrow keys to attack.
  	* Character factes attacking direction while an arrow key is pressed, after a they key is released the character faces back in the direction of 
 movement.
-* Possible solution to directional shooting, yet to be implemented.
-	* Instantiate(shot, transform.position, Quaternion.identiy);
-	* Shot script that's responsible for moving the shot instead of 
-applying a force to the rigid body.
-	* xSpeed AND ySpeed.
-	* Vector2 position=transform.position;
-	* position.x += speed;
-	* transform.position=position;
-	* Coroutine to destroy bullet or something.
-	* MODIFY BULLET SPEED AT INSTANTIATION, negative for going left.
-	* two speed variables, set to 0 vs 1 or whatever depending on the 
-directon of the shot.
-
 
 # level
  * create single room design with up to four doors.

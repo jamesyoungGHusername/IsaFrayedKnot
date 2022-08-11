@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class BulletTravel : MonoBehaviour
 {
-    public float speed = 10;
+    public float xspeed = 0.01f;
+    public float yspeed = 0.0f;
     public int damage = 1;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -16,7 +18,14 @@ public class BulletTravel : MonoBehaviour
     void Update()
     {
         
-        
+
+    }
+    void FixedUpdate()
+    {
+        Vector2 position = transform.position   ;
+        position.x += xspeed;
+        position.y += yspeed;
+        transform.position = position;
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {

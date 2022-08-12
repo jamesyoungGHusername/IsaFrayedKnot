@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class damagePlayer : MonoBehaviour
+public class DamagePlayer : MonoBehaviour
 {
     // Start is called before the first frame update
     public int damage;
@@ -16,13 +16,15 @@ public class damagePlayer : MonoBehaviour
     {
         
     }
-    protected virtual void OnCollisionEnter2D(Collision2D collision) {
-        if (collision.gameObject.CompareTag("Player")){
+
+    void OnCollisionEnter2D(Collision2D collision) {
+        if (collision.gameObject.CompareTag("Player")) {
+
             PlayerController pc = collision.gameObject.GetComponent<PlayerController>();
-            ApplyEffects(pc);
+
+            pc.decrementHealth(damage);
+     
         }
-    }
-    protected void ApplyEffects(PlayerController pc){
-        pc.decrementHealth(damage);
+
     }
 }

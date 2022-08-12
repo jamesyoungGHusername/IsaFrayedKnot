@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     public bool facingLeft;
     private Animator playerAnimator;
     public GameObject fireball;
+    public int health = 10;
     
     void Start()
     {
@@ -95,6 +96,22 @@ public class PlayerController : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         
+    }
+
+    public void decrementHealth(int by) {
+        if(health > 0) {
+            health -= by;
+            if(by > 0){
+                 IEnumerator coroutine = FlashRed();
+                StartCoroutine(coroutine);
+            }
+        }
+    }
+        private IEnumerator FlashRed()
+    {
+        GetComponent<SpriteRenderer>().color = Color.red;
+        yield return new WaitForSeconds(0.1f);
+        GetComponent<SpriteRenderer>().color = Color.white;
     }
 }
 public enum Facing

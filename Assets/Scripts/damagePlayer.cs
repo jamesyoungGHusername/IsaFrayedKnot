@@ -5,6 +5,8 @@ using UnityEngine;
 public class DamagePlayer : MonoBehaviour
 {
     // Start is called before the first frame update
+    //adding comment to test main branch protection
+
     public int damage;
     void Start()
     {

@@ -22,9 +22,12 @@ public class DamagePlayer : MonoBehaviour
 
             PlayerController pc = collision.gameObject.GetComponent<PlayerController>();
 
-            pc.decrementHealth(damage);
+            ApplyEffects(pc);
      
         }
 
+    }
+    protected void ApplyEffects(PlayerController pc) {
+        pc.decrementHealth(damage);
     }
 }

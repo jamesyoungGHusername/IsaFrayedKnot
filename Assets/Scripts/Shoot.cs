@@ -18,23 +18,28 @@ public class Shoot : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
             GameObject shot = Instantiate(shotPrefab, firePoint.position, Quaternion.identity);
+            Physics2D.IgnoreCollision(GetComponent<Collider2D>(), shot.GetComponent<Collider2D>());
+
         }
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
             GameObject shot = Instantiate(shotPrefab, firePoint.position, Quaternion.identity);
             shot.GetComponent<BulletTravel>().xspeed = shot.GetComponent<BulletTravel>().xspeed * -1;
+            Physics2D.IgnoreCollision(GetComponent<Collider2D>(), shot.GetComponent<Collider2D>());
         }
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             GameObject shot = Instantiate(shotPrefab, firePoint.position, Quaternion.identity);
             shot.GetComponent<BulletTravel>().xspeed = 0;
             shot.GetComponent<BulletTravel>().yspeed = 0.1f;
+            Physics2D.IgnoreCollision(GetComponent<Collider2D>(), shot.GetComponent<Collider2D>());
         }
         if (Input.GetKeyDown(KeyCode.DownArrow))
         {
             GameObject shot = Instantiate(shotPrefab, firePoint.position, Quaternion.identity);
             shot.GetComponent<BulletTravel>().xspeed = 0;
             shot.GetComponent<BulletTravel>().yspeed = -0.1f;
+            Physics2D.IgnoreCollision(GetComponent<Collider2D>(), shot.GetComponent<Collider2D>());
         }
 
     }

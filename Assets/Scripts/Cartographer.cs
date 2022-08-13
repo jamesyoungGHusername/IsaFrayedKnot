@@ -14,14 +14,17 @@ public class Cartographer : MonoBehaviour
 
 
     // Start is called before the first frame update
-    void Start()
-    {
-        intMap = GenFloorArr(15, 11, false);
-        wallMap = GenWallArr(15, 11);
-        RenderMap(intMap, floor, floorTile);
-        RenderMap(wallMap, wall, wallTile);
+    void Start() {
+        //intMap = GenFloorArr(15, 11, false);
+        //wallMap = GenWallArr(15, 11);
+        //RenderMap(intMap, floor, floorTile);
+        //RenderMap(wallMap, wall, wallTile);
+        GenerateRoomAt(0,0);
+        GenerateRoomAt(0, 10);
+        GenerateRoomAt(0, -10);
+        GenerateRoomAt(15, 0);
+        GenerateRoomAt(-15, 0);
     }
-
     // Update is called once per frame
     void Update()
     {
@@ -33,6 +36,16 @@ public class Cartographer : MonoBehaviour
         }
     }
 
+
+    public void GenerateRoomAt(int x,int y) {
+        intMap = GenFloorArr(16, 11, false);
+        wallMap = GenWallArr(16, 11);
+        RenderMap(intMap, floor, floorTile,x,y);
+        RenderMap(wallMap, wall, wallTile,x,y);
+    }
+
+
+
     public int[,] GenWallArr(int width, int height) {
         //x mod width || y mod height
         
@@ -40,11 +53,10 @@ public class Cartographer : MonoBehaviour
 
         Debug.Log("Max x val: " + map.GetUpperBound(0));
         Debug.Log("Max y val: " + map.GetUpperBound(1));
-        for (int x = 0; x < map.GetUpperBound(0); x++) {
-            for (int y = 0; y < map.GetUpperBound(1); y++) {
-                Debug.Log(x);
-                Debug.Log(width);
-                if ((x + 1) % width == 0) {
+        for (int x = 0; x <= map.GetUpperBound(0); x++) {
+            for (int y = 0; y <= map.GetUpperBound(1); y++) {
+                Debug.Log("x%width: "+(x%(width-2)));
+                if (x % (width-2) == 0 || y % (height-2)==0) {
                     map[x, y] = 1;
                 }
             }
@@ -55,8 +67,8 @@ public class Cartographer : MonoBehaviour
 
     public static int[,] GenFloorArr(int width,int height,bool empty) {
         int[,] map = new int[width, height];
-        for (int x = 0; x < map.GetUpperBound(0); x++) {
-            for (int y = 0; y < map.GetUpperBound(1); y++) {
+        for (int x = 0; x <= map.GetUpperBound(0); x++) {
+            for (int y = 0; y <= map.GetUpperBound(1); y++) {
                 if (empty) {
                     map[x, y] = 0;
                 } else {
@@ -76,6 +88,19 @@ public class Cartographer : MonoBehaviour
                 // 1 = tile, 0 = no tile
                 if (map[x, y] == 1) {
                     tilemap.SetTile(new Vector3Int(x, y, 0), tile);
+                }
+            }
+        }
+    }
+    public static void RenderMap(int[,] map, Tilemap tilemap, TileBase tile,int xOffset,int yOffset) {
+
+        //Loop through the width of the map
+        for (int x = 0; x < map.GetUpperBound(0); x++) {
+            //Loop through the height of the map
+            for (int y = 0; y < map.GetUpperBound(1); y++) {
+                // 1 = tile, 0 = no tile
+                if (map[x, y] == 1) {
+                    tilemap.SetTile(new Vector3Int(x+xOffset, y+yOffset, 0), tile);
                 }
             }
         }

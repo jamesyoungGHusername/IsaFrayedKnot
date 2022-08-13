@@ -14,7 +14,7 @@ public class Cartographer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        intMap = GenMapArr(15, 10, false);
+        intMap = GenMapArr(15, 11, false);
         RenderMap(intMap, floor, baseTile);
     }
 

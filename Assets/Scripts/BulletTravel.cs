@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+//draw vector from the location of the shot to the location of the enemy, apply force to enemy rigid body along that vector, scale force with the damage of the shot
+
 public class BulletTravel : MonoBehaviour
 {
     public float xspeed = 0.01f;
@@ -29,7 +32,7 @@ public class BulletTravel : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (!collision.gameObject.CompareTag("Player")) {
+        if (!collision.gameObject.CompareTag("Player")) { 
             Destroy(gameObject);
         }
         

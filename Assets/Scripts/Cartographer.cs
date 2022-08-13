@@ -2,16 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.Tilemaps;
 using UnityEngine;
-
-public class Cartographer : MonoBehaviour
-{
+public class Cartographer : MonoBehaviour {
     public Tilemap floor;
     public Tilemap wall;
     public TileBase floorTile;
     public TileBase wallTile;
     private int[,] intMap;
     private int[,] wallMap;
-
+    private Room testRoom;
 
     // Start is called before the first frame update
     void Start() {
@@ -19,11 +17,13 @@ public class Cartographer : MonoBehaviour
         //wallMap = GenWallArr(15, 11);
         //RenderMap(intMap, floor, floorTile);
         //RenderMap(wallMap, wall, wallTile);
-        GenerateRoomAt(0,0);
-        GenerateRoomAt(0, 10);
-        GenerateRoomAt(0, -10);
-        GenerateRoomAt(15, 0);
-        GenerateRoomAt(-15, 0);
+        GenerateRoomAt(0, 0);
+        //GenerateRoomAt(0, 10);
+        //GenerateRoomAt(0, -10);
+        //GenerateRoomAt(15, 0);
+        //GenerateRoomAt(-15, 0);
+        //testRoom = new Room(new List<Direction> { Direction.East, Direction.North, Direction.South, Direction.West },0,0);
+
     }
     // Update is called once per frame
     void Update()
@@ -38,8 +38,8 @@ public class Cartographer : MonoBehaviour
 
 
     public void GenerateRoomAt(int x,int y) {
-        intMap = GenFloorArr(16, 11, false);
-        wallMap = GenWallArr(16, 11);
+        intMap = GenFloorArr(6, 6, false);
+        wallMap = GenWallArr(6, 6);
         RenderMap(intMap, floor, floorTile,x,y);
         RenderMap(wallMap, wall, wallTile,x,y);
     }
@@ -48,14 +48,11 @@ public class Cartographer : MonoBehaviour
 
     public int[,] GenWallArr(int width, int height) {
         //x mod width || y mod height
-        
-        int[,] map = new int[width, height];
 
-        Debug.Log("Max x val: " + map.GetUpperBound(0));
-        Debug.Log("Max y val: " + map.GetUpperBound(1));
+        int[,] map = new int[width, height];
         for (int x = 0; x <= map.GetUpperBound(0); x++) {
             for (int y = 0; y <= map.GetUpperBound(1); y++) {
-                Debug.Log("x%width: "+(x%(width-2)));
+
                 if (x % (width-2) == 0 || y % (height-2)==0) {
                     map[x, y] = 1;
                 }
@@ -119,6 +116,45 @@ public class Cartographer : MonoBehaviour
         }
     }
 
+    public void genRooms(Room root) {
 
-
+    }
 }
+
+public class Room {
+    int doorNum;
+    Direction[] doorLocations;
+    int x;
+    int y;
+    public Room(List<Direction> possibleDoors,int x,int y) {
+        doorNum = Random.Range(0,possibleDoors.Count);
+        doorLocations = new Direction[doorNum];
+        for (int i = 0; i < possibleDoors.Count-1 ; i++) {
+            
+            int doorIndex = Random.Range(0, possibleDoors.Count-1);
+            doorLocations[i] = possibleDoors[doorIndex];
+            possibleDoors.RemoveAt(doorIndex);
+        }
+        this.x = x;
+        this.y = y;
+        foreach (Direction d in doorLocations) {
+            Debug.Log(d);
+        }
+    }
+}
+public class Floor {
+    List<Room> rooms;
+    int width, height,maxRooms;
+    public Floor(int maxRooms,int width,int height) {
+        this.width = width;
+        this.height = height;
+        this.maxRooms = maxRooms;
+    }
+}
+public enum Direction {
+    North,
+    South,
+    East,
+    West
+}
+

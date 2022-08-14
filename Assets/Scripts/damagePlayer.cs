@@ -23,7 +23,6 @@ public class DamagePlayer : MonoBehaviour
         if (collision.gameObject.CompareTag("Player")) {
 
             PlayerController pc = collision.gameObject.GetComponent<PlayerController>();
-
             ApplyEffects(pc);
      
         }

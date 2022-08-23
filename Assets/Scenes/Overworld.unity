@@ -3705,6 +3705,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fda6db613b0444f76bfd1526289ac68e, type: 3}
+--- !u!4 &702407011 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4215858700928354293, guid: fda6db613b0444f76bfd1526289ac68e, type: 3}
+  m_PrefabInstance: {fileID: 702407010}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1493288778
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3760,8 +3765,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6008811697756364203, guid: 87c4a3f5bef514818accc4a8a5568140, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 87c4a3f5bef514818accc4a8a5568140, type: 3}
+--- !u!1 &1493288779 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6008811697756364201, guid: 87c4a3f5bef514818accc4a8a5568140, type: 3}
+  m_PrefabInstance: {fileID: 1493288778}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1493288780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1493288779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0cd1d49a382a4d798727d723e8e5c10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectToFollow: {fileID: 702407011}
+  moveSpeed: 1
+  aggroRange: 10
+  isAggro: 1
 --- !u!1 &1494283051
 GameObject:
   m_ObjectHideFlags: 0

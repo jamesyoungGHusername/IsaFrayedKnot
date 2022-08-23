@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 6008811697756364206}
   - component: {fileID: 6008811697756364205}
   - component: {fileID: 6008811697756364204}
-  - component: {fileID: 6008811697756364203}
   - component: {fileID: 6008811697756364202}
   - component: {fileID: 2680894856752214887}
+  - component: {fileID: 2130389631497462325}
+  - component: {fileID: 4176833681562579616}
   m_Layer: 0
   m_Name: Troll
   m_TagString: Enemy
@@ -136,18 +137,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &6008811697756364203
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6008811697756364201}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 067f884fb300b49019c2e30c4968648d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &6008811697756364202
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -260,3 +249,35 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2130389631497462325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6008811697756364201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0cd1d49a382a4d798727d723e8e5c10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectToFollow: {fileID: 0}
+  moveSpeed: 0
+  aggroRange: 0
+  isAggro: 1
+--- !u!114 &4176833681562579616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6008811697756364201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0cd1d49a382a4d798727d723e8e5c10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectToFollow: {fileID: 4215858700928354293, guid: fda6db613b0444f76bfd1526289ac68e, type: 3}
+  moveSpeed: 1
+  aggroRange: 10
+  isAggro: 1

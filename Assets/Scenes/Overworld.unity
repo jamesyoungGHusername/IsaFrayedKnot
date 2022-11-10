@@ -3756,9 +3756,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1037673351531338958, guid: fda6db613b0444f76bfd1526289ac68e, type: 3}
+      propertyPath: mainCam
+      value: 
+      objectReference: {fileID: 122448758}
+    - target: {fileID: 1037673351531338958, guid: fda6db613b0444f76bfd1526289ac68e, type: 3}
+      propertyPath: maxShotFrequency
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4215858700928354248, guid: fda6db613b0444f76bfd1526289ac68e, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 4215858700928354251, guid: fda6db613b0444f76bfd1526289ac68e, type: 3}
+      propertyPath: speed
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4215858700928354293, guid: fda6db613b0444f76bfd1526289ac68e, type: 3}
       propertyPath: m_RootOrder
@@ -3889,6 +3901,10 @@ PrefabInstance:
     - target: {fileID: 6008811697756364201, guid: 87c4a3f5bef514818accc4a8a5568140, type: 3}
       propertyPath: m_Name
       value: Troll
+      objectReference: {fileID: 0}
+    - target: {fileID: 6008811697756364201, guid: 87c4a3f5bef514818accc4a8a5568140, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6008811697756364207, guid: 87c4a3f5bef514818accc4a8a5568140, type: 3}
       propertyPath: m_RootOrder
